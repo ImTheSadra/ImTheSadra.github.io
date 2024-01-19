@@ -20,6 +20,11 @@ body {
     text-align: center;
 }
 
+.title img {
+    border-radius: 50%;
+    border: #450058 solid 2px;
+}
+
 .window {
     margin-right: 1%;
     float: right;

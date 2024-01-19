@@ -52,7 +52,7 @@ write("./main.bin", ()=>{
         ()=>{
             setTimeout(() => {
                 clearBash();
-                write("cat ./profile.txt", 
+                write("cat ./profile.txt | lolcat", 
                     ()=>{
                         var result = document.getElementById("result");
                         result.style = "display: block;";
@@ -63,3 +63,17 @@ write("./main.bin", ()=>{
         }, "bash-promp2"
     );
 }, "bash-promp");
+
+// let angle = 0;
+
+// function loop(){
+//     var icon = document.getElementById("icon");
+//     icon.style = "transform: rotate("+angle.toString()+"deg);";
+//     console.log(angle);
+//     console.log(icon.style);
+//     angle += 1;
+    
+//     setTimeout(loop, 200);
+// }
+
+// setTimeout(loop, 200);

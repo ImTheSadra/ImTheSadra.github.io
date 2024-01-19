@@ -52,7 +52,7 @@ function setup(){
 }
 
 function castRays(){
-    angle = playera+HALF_FOV;
+    let angle = playera+HALF_FOV;
 
     for (let ray = 0; ray < castedRays; ray++){
         for(let depth = 0; depth < maxDepth; depth++){
@@ -88,6 +88,7 @@ function castRays(){
 }
 
 let time = 0;
+let angle2 = 0;
 
 function draw(){
     time += 0.001;
@@ -99,4 +100,8 @@ function draw(){
     stroke(255);
 
     text("soon...", x, y);
+
+    var icon = document.getElementById("icon");
+    icon.style = "transform: rotate("+angle2.toString()+"deg);";
+    angle2 += 1;
 }
