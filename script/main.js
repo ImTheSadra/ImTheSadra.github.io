@@ -33,7 +33,7 @@ function write(text, func, id){
 write("./main.bin", ()=>{
     document.getElementById("bash-promp2-view").style = "";
 
-    var main = document.getElementById("main");
+    var main = document.getElementsByTagName("main").item(0);
     main.style = "display: block";
 
     var title = document.createElement("h3");

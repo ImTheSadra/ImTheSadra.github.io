@@ -33,11 +33,11 @@ let map = [
 function setup(){
     createCanvas(700, 500);
 
-    // var main = document.getElementsByTagName("main").item(0);
-    // main.style = "display: none; max-width: 700; max-height: 500;";
-    // main.id = "main";
+    var main = document.getElementsByTagName("main").item(0);
+    main.style = "display: none; max-width: 700; max-height: 500;";
+    main.id = "main";
 
-    // main.className = "window";
+    main.className = "window";
 
     // var window = document.getElementById("window");
     // window.children = [main];
@@ -87,7 +87,16 @@ function castRays(){
     }
 }
 
+let time = 0;
+
 function draw(){
+    time += 0.001;
     background(10);
-    castRays()
+
+    let x = noise(time)*width;
+    let y = noise(time+200)*height;
+
+    stroke(255);
+
+    text("soon...", x, y);
 }
