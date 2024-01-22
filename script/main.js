@@ -64,16 +64,19 @@ write("./main.bin", ()=>{
     );
 }, "bash-promp");
 
-// let angle = 0;
+function goPage(name){
+    var pages = document.getElementsByClassName("page");
+    for(let i = 0; i < pages.length; i++){
+        var p = pages.item(i);
+        p.style = "display: none";
 
-// function loop(){
-//     var icon = document.getElementById("icon");
-//     icon.style = "transform: rotate("+angle.toString()+"deg);";
-//     console.log(angle);
-//     console.log(icon.style);
-//     angle += 1;
-    
-//     setTimeout(loop, 200);
-// }
+        var btn = document.getElementById(p.id + "Btn");
+        btn.className = "nav-link";
+    }
 
-// setTimeout(loop, 200);
+    var page = document.getElementById(name);
+    page.style = "display: block;";
+
+    var pBtn = document.getElementById(name + "Btn");
+    pBtn.className = "nav-link active";
+}
