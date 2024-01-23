@@ -32,6 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link" onclick="goPage('resume')" id="resumeBtn" href="#resume">Resume</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="goPage('findMe')" id="findMeBtn" href="#findme">Find Me</a>
+                    </li>
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -107,8 +110,36 @@
         </div>
     </div>
 
+    <div id="findMe" class="page" style="display: none;">
+        <div class="findMe" >
+            <br>
+            <br>
+            <div style="margin-left: 5%;">
+                <a href="mailto:m.sadra.gorji@gmail.com"><button>mail</button></a>
+                <button onclick="showPhone()">phone</button>
+                <a href="https://discord.gg/RzxrR6bMMf"><button>discord</button></a>
+                <a href="https://github.com/SadraInTheBox"><button>github</button></a>
+
+                <br>
+                <h4 style="display: none;" id="phone">Phone : 09109642551 
+                    <button style="background-color: brown; font-size: small;" onclick="copy()">copy</button>
+                </h4>
+            </div>
+        </div>
+
+        <script>
+            function showPhone(){
+                var phone = document.getElementById("phone");
+                phone.style = "display: block;";
+            }
+
+            function copy(){
+                navigator.clipboard.writeText("09109642551");
+            }
+        </script>
+    </div>
+
     <div id="scripts">
-        <script src="./script/p5.js"></script>
         <script src="./script/game.js"></script>
         <script src="./script/main.js"></script>
     </div>
