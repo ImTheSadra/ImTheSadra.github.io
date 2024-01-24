@@ -80,3 +80,15 @@ function goPage(name){
     var pBtn = document.getElementById(name + "Btn");
     pBtn.className = "nav-link active";
 }
+
+var angle = 0;
+
+function loop(){
+    var icon = document.getElementById("icon");
+    icon.style = "transform: rotate("+angle.toString()+"deg);";
+
+    angle += 1;
+    setTimeout(loop, 10);
+}
+
+loop()

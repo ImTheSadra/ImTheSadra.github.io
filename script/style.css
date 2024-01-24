@@ -34,10 +34,11 @@ body {
     margin-right: 1%;
     float: right;
     background-color: #333333;
+    min-width: 40%;
 }
 
 .window .title {
-    max-width: 700px;
+    max-width: 100%;
     min-width: 700px;
     font-style: normal;
     margin-top: -1.3%;
@@ -56,8 +57,8 @@ body {
     font-size: 17px;
     width: 700px;
     height: 500px; 
-    min-height: 500px;
-    max-width: 700px;
+    min-height: 70%;
+    max-width: 50%;
     margin-left: 3%;
 }
 
