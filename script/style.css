@@ -4,10 +4,28 @@
 }
 
 body {
-    background-image: url("../assest/background.png");
+    background-image: url("/assest/background.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: initial;
+}
+
+@media screen and (max-device-width: 991){
+    .page .n-col {
+        float:none;
+        max-width: 90%;
+        min-width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-device-width: 991){
+    .page .n-col {
+        float:none;
+        max-width: 90%;
+        min-width: 90%;
+        margin-left: 5%;
+    }
 }
 
 /* * {
@@ -30,16 +48,62 @@ body {
     font-size: medium;
 }
 
+/* @media screen and (max-device-width: 990) {
+    .window {
+        margin-right: 1%;
+        float: right;
+        background-color: #333333;
+        min-width: 40%;
+    }
+    
+    .window .title {
+        max-width: 100%;
+        min-width: 700px;
+        font-style: normal;
+        margin-top: -1.3%;
+        border-top: #333333 solid 10px;
+        background-color: #333333;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-device-width: 989){
+    .window {
+        margin-right: 1%;
+        float: none;
+        background-color: #333333;
+        min-width: 90%;
+        max-width: 90%;
+        margin-left: 5%;
+    }
+    
+    .window .title {
+        max-width: 100%;
+        font-style: normal;
+        margin-top: -1.3%;
+        border-top: #333333 solid 10px;
+        background-color: #333333;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        text-align: center;
+    }
+} */
+
 .window {
-    margin-right: 1%;
+margin-right: 1%;
     float: right;
     background-color: #333333;
     min-width: 40%;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .window .title {
     max-width: 100%;
-    /* min-width: 700px; */
+    min-width: 700px;
     font-style: normal;
     margin-top: -1.3%;
     border-top: #333333 solid 10px;
@@ -49,6 +113,62 @@ body {
     text-align: center;
 }
 
+/* @media screen and (max-device-width: 990){
+    .bash {
+        float: left;
+        background-color: #450058;
+        color: white;
+        font-size: 17px;
+        width: 700px;
+        height: 500px; 
+        min-height: 70%;
+        max-width: 50%;
+        margin-left: 3%;
+    }
+
+    .bash pre {
+        margin-left: 3px;
+    }
+
+    .bash .title {
+        font-style: normal;
+        border-top: #333333 solid 10px;
+        background-color: #333333;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        margin-top: -1%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-device-width: 989){
+    .bash {
+        float: none;
+        background-color: #450058;
+        color: white;
+        font-size: 17px;
+        width: 700px;
+        height: 500px; 
+        min-height: 70%;
+        max-width: 90%;
+        min-width: 90%;
+        margin-left: 5%;
+    }
+
+    .bash pre {
+        margin-left: 0.2%;
+    }
+
+    .bash .title {
+        font-style: normal;
+        border-top: #333333 solid 10px;
+        background-color: #333333;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        margin-top: -1%;
+        text-align: center;
+    }
+} */
 
 .bash {
     float: left;
@@ -60,6 +180,8 @@ body {
     min-height: 70%;
     max-width: 50%;
     margin-left: 3%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .bash pre {
@@ -120,4 +242,68 @@ body {
 
 .findMe button:hover {
     background-color: rgba(4, 0, 26, 0.336);
+}
+
+.blogs button {
+    background-color: #333333;
+    color: white;
+    border-radius: 12px;
+    min-width: 80%;
+    font-size: 130%;
+    margin-left: 10%;
+    margin-top: 1%;
+    border: #333333 solid 1px;
+}
+
+.blogs button:hover {
+    background-color: #33333381;
+}
+
+.blog-content {
+    max-width: 90%;
+    max-height: 85%;
+    min-width: 90%;
+    min-height: 85%;
+    margin-left: 5%;
+    margin-top: 0.2%;
+}
+
+.blog-content * {
+    color: white;
+}
+
+.blog-content textarea {
+    background-color: #333333cd;
+    border-radius: 12px;
+    color: white;
+    /* min-width: 150%;
+    min-height: 100%;
+    max-width: 150%;
+    max-height: 100%;
+    font-size: 110%;
+    resize: none;
+    border-color: #333333;
+    margin-left: -30%;
+    float: right; */
+    margin-left: 1%;
+}
+
+.blog-content .menu {
+    border-color: #333333;
+    background-color: #333333cd;
+    color: white;
+    width: 30%;
+    max-width: 30%;
+    min-width: 30%;
+    height: 80%;
+    max-height: 80%;
+    min-height: 80%;
+    border-radius: 12px;
+}
+
+.blog-content .menu img {
+    border-radius: 12px;
+    border-color: #333333;
+    max-width: 90%;
+    padding: -1%;
 }

@@ -38,7 +38,7 @@ write("./main.bin", ()=>{
 
     var title = document.createElement("h3");
     title.className = "title";
-    title.innerText = "Game";
+    title.innerHTML = "Game <i class='fa-solid fa-gamepad'></i>";
     
     var childs = main.children;
 
@@ -87,8 +87,14 @@ function loop(){
     var icon = document.getElementById("icon");
     icon.style = "transform: rotate("+angle.toString()+"deg);";
 
-    angle += 1;
+    angle += 0.8;
     setTimeout(loop, 10);
 }
 
-loop()
+loop();
+
+function gitsearch(){
+    let search = document.getElementById("search");
+    let url = "https://github.com/search?q=owner%3ASadraInTheBox%20"+search.value;
+    window.open(url, "_blank");
+}

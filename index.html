@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -7,71 +7,74 @@
     <meta property="og:description" content="about me and my resume">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/104717267">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="icon" href="https://avatars.githubusercontent.com/u/104717267">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./script/style.css">
     <link rel="stylesheet" href="./script/fontawesome/css/all.css">
     <title>Sadra In The Box</title>
+    <style>
+        @media screen and(min-width: 990){
+            .icon img {width: 200%;}
+        }
+        @media screen and(max-width: 990) {
+            .icon img {width: 100;}
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <div class="navbar-brand icon">
-                <img src="https://avatars.githubusercontent.com/u/104717267" id="icon" width="100%">
-            </div>
-            <a class="navbar-brand" href="#home" onclick="goPage('home')">Sadra In The Box</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home" id="homeBtn" onclick="goPage('home')">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="goPage('resume')" id="resumeBtn" href="#resume">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="goPage('findMe')" id="findMeBtn" href="#findme">Find Me</a>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li> -->
-                </ul>
-                <!-- <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> -->
+    <div class="post-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white">SadraInTheBox</h4>
+                <span class="text-muted"><a class="nav-link active" onclick="goPage('home')" href="#home">Home <i class="fa-solid fa-house"></i></a></span>
+                <span class="text-muted"><a class="nav-link" onclick="goPage('resume')" href="#resume">Resume <i class="fa-solid fa-file"></i></a></span>
+                <span class="text-muted"><a class="nav-link" onclick="goPage('findMe')" href="#findme">Find Me <i class="fa-solid fa-user"></i></a></span>
             </div>
         </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="navbar-brand icon">
+                    <img src="https://avatars.githubusercontent.com/u/104717267" id="icon" width="100%">
+                </div>
+                <a class="navbar-brand" href="#home" onclick="goPage('home')">Sadra In The Box</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home" id="homeBtn" onclick="goPage('home')">Home <i class="fa-solid fa-house"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goPage('resume')" id="resumeBtn" href="#resume">Resume <i class="fa-solid fa-file"></i></a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" onclick="goPage('blog')" id="blogBtn" href="#blogs">Blogs</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goPage('findMe')" id="findMeBtn" href="#findme">Find Me <i class="fa-solid fa-user"></i></a>
+                        </li>
+                    </ul>
+                    <div class="form-inline my-3 my-lg-0">
+                        <input class="form-control" type="search" placeholder="Search in my github" id="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="gitsearch();">Search</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <div id="home" style="display: block;" class="page">
         <br><br>
-        <div class="bash">
-            <h3 class="title">sandro@HP-ZBook: ~</h1>
-
+        <div>
+            <div class="bash n-col">
+                <h3 class="title"><i class="fa-solid fa-terminal"></i> sandro@HP-ZBook: ~</h1>
                 <pre>
 <font color="#4E9A06"><b>sandro@HP-ZBook</b></font>:<font color="#3465A4"><b>~</b></font>$ <b id="bash-promp"></b>
-            <div id="result" style="display: none;">
+                    <div id="result" style="display: none;">
 <font color="#00FF87">₊ ˚</font><font color="#5FFF87">﹒</font><font color="#5FFF5F"> ✦₊  ₊˚   ★</font><font color="#87FF5F"> </font><font color="#87FF00">   ⸝⸝  ₊˚</font><font color="#AFFF00">﹒ ✦₊   ₊˚</font>
 <font color="#5FFF87">.</font><font color="#5FFF5F"> .  /)  /)</font>
 <font color="#5FFF5F">. . (｡•ㅅ•｡</font><font color="#87FF5F">)</font><font color="#87FF00">〝₎₎ Sandr</font><font color="#AFFF00">oInTheBox!</font><font color="#AFD700"> </font><font color="#D7D700">✦₊ ˊ˗ </font>
@@ -85,20 +88,21 @@
 <font color="#AFFF00">. .┊ </font><font color="#AFD700">◟</font><font color="#D7D700">﹫ github : </font><font color="#D7AF00">h</font><font color="#FFAF00">ttps://gi</font><font color="#FF8700">thub.com/</font><font color="#FF875F">S</font><font color="#FF5F5F">adraInTheBo</font><font color="#FF5F87">x</font>
 <font color="#AFFF00">  </font><font color="#AFD700"> </font><font color="#D7D700">╰──────────</font><font color="#D7AF00">─</font><font color="#FFAF00">──  ✦ ⁺.</font>
 <font color="#D7D700">₊˚ ﹒✦ ₊  ₊˚</font><font color="#D7AF00"> </font><font color="#FFAF00">  ★     ⸝</font><font color="#FF8700">⸝ ₊˚﹒✦ ₊ </font><font color="#FF875F"> </font><font color="#FF5F5F">₊˚</font>
-            </div>
-<div style="display: none;" id="bash-promp2-view"><font color="#4E9A06"><b>sandro@HP-ZBook</b></font>:<font color="#3465A4"><b>~</b></font>$ <b id="bash-promp2"></b></div> 
-        </pre>
-        </div>
-
-        <main class="window" style="display: none;">
+                    </div>
+    <div style="display: none;" id="bash-promp2-view"><font color="#4E9A06"><b>sandro@HP-ZBook</b></font>:<font color="#3465A4"><b>~</b></font>$ <b id="bash-promp2"></b></div> 
+                </pre>
+        </div>    
+        
+        <main class="window n-col" style="display: none;">
             <embed type="text/html" src="./game.html" width="700px" height="500px">
         </main>
+        </div>
     </div>
 
     <div id="resume" style="display: none; min-height: 100%; height: 100%;" class="page">
         <div style="width: 80%; height: 100%; min-height: 100%; float: left;">
             <iframe src="./assest/resume.pdf" class="resume" id="resumeShow" frameborder="0" style="overflow:hidden;height:85vh;width:100%" width="100%">
-                <p>
+                <p style="color: rgb(255, 37, 37);">
                     It appears you don't have a PDF plugin for this browser.
                     No biggie... you can click <a href="./assest/resume.pdf">here</a> to download my resume file.
                 </p>
@@ -121,7 +125,7 @@
                 <a href="mailto:m.sadra.gorji@gmail.com"><button>mail <i class="fa fa-envelope" aria-hidden="true"></i></button></a>
                 <button onclick="showPhone()">phone <i class="fa fa-phone" aria-hidden="true"></i></button>
                 <a href="https://discord.gg/RzxrR6bMMf"><button>discord <i class="fa fa-commenting" aria-hidden="true"></i></button></a>
-                <a href="https://github.com/SadraInTheBox"><button>github <i class="fa fa-github" aria-hidden="true"></i></button></a>
+                <a href="https://github.com/SadraInTheBox"><button>github <i class="fa-brands fa-github"></i></button></a>
 
                 <br>
                 <h4 style="display: none;" id="phone">Phone : 09109642551 
@@ -129,16 +133,15 @@
                 </h4>
             </div>
             
-            <div style="float: right; margin-right: 5%;">
+            <!-- <div style="float: right; margin-right: 5%;">
                 <iframe src="https://discord.com/widget?id=1015629142655500362&theme=dark" 
                 width="350" height="500" 
                 allowtransparency="true" frameborder="0" 
                 
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 >
-                    <script src="./script/discord.js"></script>
                 </iframe>
-            </div>
+            </div> -->
             <div style="float: right; margin-right: 2%">
                 <img src="https://github-readme-stats.vercel.app/api?username=sadrainthebox&show_icons=true&theme=dark">
                 <br>
@@ -163,9 +166,38 @@
         </script>
     </div>
 
+    <!-- <div id="blog" class="page" style="display: none;">
+        <div id="myBlogs" class="blogs"></div>
+    </div> -->
+
     <div id="scripts">
         <script src="./script/game.js"></script>
         <script src="./script/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+            // const blogs = [
+            //     ["1", "پست اول"]
+            // ]
+            // for(let i = 0; i < blogs.length; i++){
+            //     let blog = blogs[i];
+            //     console.log(blog[0]+" connecting...");
+            //     console.log(blog[0]+" connected!");
+            //     let a = document.createElement("a");
+            //     a.href = "./blog.html?id="+blog[0];
+            //     let btn = document.createElement("button");
+            //     // a.id = blog[0];
+            //     btn.innerText = blog[1];
+
+            //     a.appendChild(btn);
+
+            //     let div = document.getElementById("myBlogs");
+            //     div.appendChild(a);
+
+            //     console.log(blog);
+            // }
+        </script>
     </div>
 </body>
 

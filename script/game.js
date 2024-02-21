@@ -1,4 +1,4 @@
-// lod game.js file
+// old game.js file
 
 let angle2 = 0;
 
