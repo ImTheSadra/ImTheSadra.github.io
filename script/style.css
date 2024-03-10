@@ -1,13 +1,15 @@
 @font-face {
     font-family: "ubuntu";
-    src: url("../assest/ubuntu.ttf");
+    src: url("/assest/ubuntu.ttf");
 }
 
 body {
-    background-image: url("/assest/background.png");
+    /* background-image: url("/assest/background.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-clip: initial;
+    background-clip: initial; */
+
+    background: url("/assest/background.png") fixed;
 }
 
 @media screen and (max-device-width: 991){
@@ -92,10 +94,10 @@ body {
 } */
 
 .window {
-margin-right: 1%;
+    margin-right: 1%;
     float: right;
     background-color: #333333;
-    min-width: 40%;
+    min-width: 500px;
 
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -204,7 +206,6 @@ margin-right: 1%;
 
 .resumeFooter {
     background-color: rgb(91, 33, 186);
-    min-height: 85vh;
     border-bottom-right-radius: 15px;
     border: #333333 solid 3px;
 }
@@ -218,6 +219,14 @@ margin-right: 1%;
     margin-left: 3%;
     border: white solid 2px;
     text-align: left;
+}
+
+.resumeFooter select {
+    margin-left: 3%;
+    color: bisque;
+    background-color: #333333;
+    border-radius: 4px;
+    border: white solid 2px;
 }
 
 .resumeFooter button i {
@@ -307,3 +316,7 @@ margin-right: 1%;
     max-width: 90%;
     padding: -1%;
 }
+/* 
+.display {
+    min-width: ;
+} */

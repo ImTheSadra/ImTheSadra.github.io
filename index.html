@@ -8,7 +8,7 @@
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/104717267">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/104717267">
+    <link rel="icon" href="/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./script/style.css">
@@ -58,10 +58,10 @@
                             <a class="nav-link" onclick="goPage('findMe')" id="findMeBtn" href="#findme">Find Me <i class="fa-solid fa-user"></i></a>
                         </li>
                     </ul>
-                    <div class="form-inline my-3 my-lg-0">
+                    <!-- <div class="form-inline my-3 my-lg-0">
                         <input class="form-control" type="search" placeholder="Search in my github" id="search">
                         <button class="btn btn-outline-success my-2 my-sm-0" onclick="gitsearch();">Search</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </nav>
@@ -70,8 +70,8 @@
     <div id="home" style="display: block;" class="page">
         <br><br>
         <div>
-            <div class="bash n-col">
-                <h3 class="title"><i class="fa-solid fa-terminal"></i> sandro@HP-ZBook: ~</h1>
+            <div class="bash n-col part">
+                <h3 class="title">sandro@HP-ZBook: ~</h1>
                 <pre>
 <font color="#4E9A06"><b>sandro@HP-ZBook</b></font>:<font color="#3465A4"><b>~</b></font>$ <b id="bash-promp"></b>
                     <div id="result" style="display: none;">
@@ -92,28 +92,37 @@
     <div style="display: none;" id="bash-promp2-view"><font color="#4E9A06"><b>sandro@HP-ZBook</b></font>:<font color="#3465A4"><b>~</b></font>$ <b id="bash-promp2"></b></div> 
                 </pre>
         </div>    
-        
-        <main class="window n-col" style="display: none;">
-            <embed type="text/html" src="./game.html" width="700px" height="500px">
+        <div id="space"></div>
+        <main class="window n-col part" style="display: none;">
+            <!-- <embed type="text/html" src="./game.html" width="700px" height="500px"> -->
+            <canvas id="gameWindow"></canvas>
         </main>
         </div>
     </div>
 
     <div id="resume" style="display: none; min-height: 100%; height: 100%;" class="page">
-        <div style="width: 80%; height: 100%; min-height: 100%; float: left;">
-            <iframe src="./assest/resume.pdf" class="resume" id="resumeShow" frameborder="0" style="overflow:hidden;height:85vh;width:100%" width="100%">
+        <div style="width: 80%; height: 100%; min-height: 100%; float: left;" class="part">
+            <iframe src="./assest/resume.pdf" class="resume" id="pdfShow" frameborder="0" style="overflow:hidden;height:85vh;width:100%" width="100%">
                 <p style="color: rgb(255, 37, 37);">
                     It appears you don't have a PDF plugin for this browser.
                     No biggie... you can click <a href="./assest/resume.pdf">here</a> to download my resume file.
                 </p>
             </iframe>
         </div>
-        <div class="resumeFooter">
-            <a href="./assest/resume.pdf">
+        <h4 id="demo" style="color: red;"></h4>
+        <div class="resumeFooter" id="resumeFooter" style="min-height: 85vh;" aria-colspan="part">
+            <a href="./assest/resume.pdf" id="downloadFile">
                 <button>
                     download <i class="fa fa-download" aria-hidden="true"></i>
                 </button>
             </a>
+            <br>
+            <br>
+            <br>
+            <select id="certificates" aria-placeholder="certificates">
+                <option value="resume">Resume</option>
+                <option value="cv">CV - Nestle</option>
+            </select>
         </div>
     </div>
 
@@ -121,7 +130,7 @@
         <div class="findMe" >
             <br>
             <br>
-            <div style="margin-left: 5%; float: left;">
+            <div style="margin-left: 5%; float: left;" class="part">
                 <a href="mailto:m.sadra.gorji@gmail.com"><button>mail <i class="fa fa-envelope" aria-hidden="true"></i></button></a>
                 <button onclick="showPhone()">phone <i class="fa fa-phone" aria-hidden="true"></i></button>
                 <a href="https://discord.gg/RzxrR6bMMf"><button>discord <i class="fa fa-commenting" aria-hidden="true"></i></button></a>
@@ -142,7 +151,7 @@
                 >
                 </iframe>
             </div> -->
-            <div style="float: right; margin-right: 2%">
+            <div style="float: right; margin-right: 2%" class="part">
                 <img src="https://github-readme-stats.vercel.app/api?username=sadrainthebox&show_icons=true&theme=dark">
                 <br>
                 <br>
@@ -171,8 +180,9 @@
     </div> -->
 
     <div id="scripts">
-        <script src="./script/game.js"></script>
-        <script src="./script/main.js"></script>
+        <script src="/script/p5.js"></script>
+        <script src="/script/game.js"></script>
+        <script src="/script/main.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

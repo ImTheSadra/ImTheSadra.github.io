@@ -81,13 +81,34 @@ function goPage(name){
     pBtn.className = "nav-link active";
 }
 
+let page = window.location.hash.replace("#", "");
+goPage(page);
+
 var angle = 0;
+
+let parts = document.getElementsByClassName("part");
+
+if (innerWidth < 1000){
+    for (let i = 0; i < parts.length; i++){
+        let part = parts.item(i);
+        part.style.float = "unset";
+    }
+    document.getElementById("space").innerHTML = "<br><br><br><br><br>";
+    document.getElementById("icon").setAttribute("width", "220%");
+    let footer = document.getElementById("resumeFooter");
+    footer.setAttribute("style", "min-height: 20vh; border-radius: 15px; margin-bottom:1px;");
+    let pdf = document.getElementById("pdfShow");
+    if (pdf.style.overflow == "hidden"){
+        pdf.remove();
+        document.getElementById("demo").innerText = "sorry i cant show you pdf files\nyou can download file or use another browser";
+    } 
+}
 
 function loop(){
     var icon = document.getElementById("icon");
     icon.style = "transform: rotate("+angle.toString()+"deg);";
 
-    angle += 0.8;
+    angle += 0.5;
     setTimeout(loop, 10);
 }
 
@@ -98,3 +119,11 @@ function gitsearch(){
     let url = "https://github.com/search?q=owner%3ASadraInTheBox%20"+search.value;
     window.open(url, "_blank");
 }
+
+document.getElementById("certificates").addEventListener("change", ()=>{
+    let pdf = document.getElementById("pdfShow");
+    let url = "/assest/"+document.getElementById("certificates").value.toString()+".pdf";
+    
+    document.getElementById("downloadFile").href = url;
+    pdf.src = url;
+})
