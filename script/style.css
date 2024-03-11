@@ -327,8 +327,14 @@ body {
     border: #333333 solid 1px;
     /* min-width: 70%; */
     max-width: 70%;
+    color: white;
 }
 
 .skills * {
-    color: white;
+    padding-top: 3%;
+    padding-left: 3%;
+}
+
+.skills p {
+    margin-left: 3%;
 }
