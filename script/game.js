@@ -1,3 +1,4 @@
+// console.log(innerWidth);
 let width = 700;
 let height = 500;
 
@@ -16,6 +17,9 @@ let height = 500;
 // }
 
 function startup(){
+    if (innerWidth <= 700){
+        return;
+    }
     let canvas = document.getElementById("gameWindow");
     canvas.setAttribute("width", width.toString());
     canvas.setAttribute("height", height.toString());

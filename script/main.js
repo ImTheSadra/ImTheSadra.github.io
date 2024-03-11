@@ -34,18 +34,20 @@ write("./main.bin", ()=>{
     document.getElementById("bash-promp2-view").style = "";
 
     var main = document.getElementsByTagName("main").item(0);
-    main.style = "display: block";
+    if (innerWidth >= 700){
+        main.style = "display: block";
 
-    var title = document.createElement("h3");
-    title.className = "title";
-    title.innerHTML = "Game <i class='fa-solid fa-gamepad'></i>";
-    
-    var childs = main.children;
+        var title = document.createElement("h3");
+        title.className = "title";
+        title.innerHTML = "Game <i class='fa-solid fa-gamepad'></i>";
+        
+        var childs = main.children;
 
-    var canvas = childs.item(0);
-    main.children = [];
-    main.appendChild(title);
-    main.appendChild(canvas);
+        var canvas = childs.item(0);
+        main.children = [];
+        main.appendChild(title);
+        main.appendChild(canvas);
+    }
 
     write(
         "clear",
@@ -75,16 +77,20 @@ function goPage(name){
     }
 
     var page = document.getElementById(name);
-    page.style = "display: block;";
+    // console.log(name);
+    try { page.style = "display: block;"; } catch {
+        return goPage("home");
+    }
 
     var pBtn = document.getElementById(name + "Btn");
     pBtn.className = "nav-link active";
 }
 
 let page = window.location.hash.replace("#", "");
+if (page == ""){
+    page = "home";
+}
 goPage(page);
-
-var angle = 0;
 
 let parts = document.getElementsByClassName("part");
 
@@ -96,13 +102,16 @@ if (innerWidth < 1000){
     document.getElementById("space").innerHTML = "<br><br><br><br><br>";
     document.getElementById("icon").setAttribute("width", "220%");
     let footer = document.getElementById("resumeFooter");
-    footer.setAttribute("style", "min-height: 20vh; border-radius: 15px; margin-bottom:1px;");
+    footer.setAttribute("style", "border-radius: 15px; margin-bottom:1px;");
     let pdf = document.getElementById("pdfShow");
     if (pdf.style.overflow == "hidden"){
         pdf.remove();
         document.getElementById("demo").innerText = "sorry i cant show you pdf files\nyou can download file or use another browser";
-    } 
+    }
+    document.getElementById("bashWindow").style = "min-width: 80%;margin-left:10%";
 }
+
+let angle = 0;
 
 function loop(){
     var icon = document.getElementById("icon");
@@ -127,3 +136,5 @@ document.getElementById("certificates").addEventListener("change", ()=>{
     document.getElementById("downloadFile").href = url;
     pdf.src = url;
 })
+
+// alert(innerWidth);
