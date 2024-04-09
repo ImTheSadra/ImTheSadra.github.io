@@ -1,6 +1,6 @@
 // console.log(innerWidth);
-let width = 700;
-let height = 500;
+const width = 700;
+const height = 500;
 
 // function loop(){
 //     // let canvas = document.getElementById("gameWindow");
@@ -26,6 +26,13 @@ function startup(){
     canvas.setAttribute("class", "display");
 
     let ctx = canvas.getContext("2d");
+
+    ctx.globalAlpha = 255/2;
+
+    ctx.fillStyle = "#333333";
+    ctx.fillRect(0,0,width,height);
+
+    ctx.fillStyle = "white";
     ctx.font = "40px Arial";
     ctx.fillText("soon...", width/2-40, height/2);
 
