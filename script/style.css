@@ -339,3 +339,23 @@ body {
 .skills p {
     margin-left: 3%;
 }
+
+.projectItem {
+    border: none;
+    background-color: rgba(51, 51, 51, 0.674);
+    /* border-radius: 13px; */
+    border: #450058 solid 1px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 5%;
+    margin-top: 1%;
+    color: white;
+}
+
+.projectItem tr {
+    border: rgba(255, 255, 255, 0) solid 0px;
+}
+
+.projectItem tbody{
+    border: rgba(255, 255, 255, 0) solid 0px;
+}
