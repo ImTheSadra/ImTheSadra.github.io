@@ -44,7 +44,7 @@
     </nav>
     <br>
     <br>
-    <div class="container">
+    <div class="container" id="content">
         <table class="projectItem">
             <tr style="min-width: 90%;">
                 <td>
@@ -110,6 +110,13 @@
 
             loop();
         </script>
+        <script src="/projects/index.js"></script>
+    </div>
+    <div id="show" style="display: none; position: absolute; z-index: 2;top: 20%; min-width: 80%;">
+        <img id="imgShow" alt="sorry we cant load this image" src="" style="width: 80%; margin-left: 10%;">
+        <a onclick="closeImage()" style="float: right;">
+            <button class="btn btn-close"></button> close
+        </a>
     </div>
 </body>
 </html>

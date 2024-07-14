@@ -40,13 +40,26 @@ write("./main.bin", ()=>{
         var title = document.createElement("h3");
         title.className = "title";
         title.innerHTML = "Game <i class='fa-solid fa-gamepad'></i>";
-        
-        var childs = main.children;
 
-        var canvas = childs.item(0);
+        var canvas = document.getElementsByTagName("canvas").item(0);
         main.children = [];
         main.appendChild(title);
         main.appendChild(canvas);
+        // document.getElementById("defaultCanvas1").style = "display: none;"
+
+        let size = document.createElement("input");
+        size.type = "range";
+        size.className = "onCanvas";
+        // size.style.left = "2px";
+        // const main = document.getElementsByTagName("main").item(0);
+        let rect = main.getBoundingClientRect();
+        size.style.top = (rect.y + window.scrollY).toString()+"px";
+        size.style.left = (rect.x + window.screenX).toString()+"px";
+        size.id = "rSize";
+        size.max = 70;
+        size.min = 5
+
+        main.appendChild(size);
     }
 
     write(

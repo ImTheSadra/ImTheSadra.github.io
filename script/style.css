@@ -359,3 +359,7 @@ body {
 .projectItem tbody{
     border: rgba(255, 255, 255, 0) solid 0px;
 }
+
+.onCanvas {
+    position: absolute;
+}
