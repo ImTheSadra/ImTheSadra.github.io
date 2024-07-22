@@ -44,7 +44,9 @@ write("./main.bin", ()=>{
         var canvas = document.getElementsByTagName("canvas").item(0);
         main.children = [];
         main.appendChild(title);
-        main.appendChild(canvas);
+        if (canvas != null){
+            main.appendChild(canvas);
+        }
         // document.getElementById("defaultCanvas1").style = "display: none;"
 
         let size = document.createElement("input");
