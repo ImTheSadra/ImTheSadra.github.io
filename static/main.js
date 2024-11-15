@@ -102,3 +102,7 @@ function showImages(){
     }
     xhr.send();
 }
+
+if (document.getElementById("menu_items").children.length == 0){
+    document.getElementById("nav-toggle").classList.add("hidden");
+}

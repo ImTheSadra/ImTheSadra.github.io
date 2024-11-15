@@ -4,7 +4,10 @@ let canvas = document.querySelector("#rainbow_canvas"),
     w = canvas.clientWidth,
     h = canvas.clientHeight,
     particles = [];
-
+    
+if (innerWidth < innerHeight){
+    h = h*1.75;
+}
 // let rainbowDIV = document.getElementById("rainbow");
 // w = rainbowDIV.clientWidth;
 // h = rainbowDIV.clientHeight;
