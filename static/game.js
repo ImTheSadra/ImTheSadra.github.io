@@ -72,8 +72,6 @@ function setup(){
     canvas.classList.add("rounded-b-md");
     canvas.classList.add("w-full");
     canvas.classList.add("h-9/10");
-    // canvas.removeAttribute("width");
-    // canvas.removeAttribute("height");
     canvas.removeAttribute("style");
     window.appendChild(canvas);
 

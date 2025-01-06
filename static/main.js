@@ -31,13 +31,17 @@ function addRepo(name, img, desc){
     let a = document.createElement("a");
     a.href = "https://github.com/imthesadra/"+name;
     a.className = "p-4";
+
+    let btn = document.createElement("input", {type: "submit"});
+    btn.classList.add("projectBtn");
+    btn.setAttribute("id",name+"-btn");
+
+    let label = document.createElement("label");
+    label.setAttribute("for",name+"-btn");
     
-    let div = document.createElement("div");
-    div.className = "p-2 bg-slate-50 dark:bg-slate-800 rounded-md shadow-md flex flex-row items-center";
-    
-    let img_ = document.createElement("img");
-    img_.src = img;
-    img_.className = "rounded-md w-2/5";
+    // let img_ = document.createElement("img");
+    // img_.src = img;
+    // img_.className = "rounded-md w-2/5";
 
     let info = document.createElement("div");
     info.className = "px-4 w-3/5 text-center";
