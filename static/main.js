@@ -26,38 +26,35 @@ if (innerWidth > innerHeight){
     grid.classList.add("grid-cols-1");
 }
 
-function addRepo(name, img, desc){
-    // console.log(name, img, desc);
+function addRepo(name, imgURL, desc){
     let a = document.createElement("a");
     a.href = "https://github.com/imthesadra/"+name;
-    a.className = "p-4";
+    a.className = "p-4 w-full h-full";
 
-    let btn = document.createElement("input", {type: "submit"});
-    btn.classList.add("projectBtn");
-    btn.setAttribute("id",name+"-btn");
-
-    let label = document.createElement("label");
-    label.setAttribute("for",name+"-btn");
+    let div = document.createElement("div");
+    div.className = "max-w-sm w-full h-full rounded-md overflow-hidden shadow-lg dark:bg-slate-950 bg-slate-100 p-3";
     
-    // let img_ = document.createElement("img");
-    // img_.src = img;
-    // img_.className = "rounded-md w-2/5";
+    let img = document.createElement("img");
+    img.src = imgURL;
+    img.className = "w-full rounded-md";
+    img.alt = "Project";
+
+    let about = document.createElement("div");
+    about.className = "px-6 py-4";
 
     let info = document.createElement("div");
-    info.className = "px-4 w-3/5 text-center";
+    info.className = "text-gray-700 text-base";
+    info.innerText = desc;
 
     let title = document.createElement("p");
     title.innerText = name;
-    title.className = "text-2xl";
-
-    let des = document.createElement("p");
-    des.innerText = desc;
-
-    info.appendChild(title);
-    info.appendChild(des);
+    title.className = "font-bold text-xl mb-2";
     
-    div.appendChild(img_);
-    div.appendChild(info);
+    about.appendChild(title);
+    about.appendChild(info);
+
+    div.appendChild(img);
+    div.appendChild(about);
 
     a.appendChild(div);
 
