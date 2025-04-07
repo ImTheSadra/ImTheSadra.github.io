@@ -33,9 +33,9 @@
 </head>
 
 <body class="font-vzir bg-white dark:bg-slate-900 w-full h-screen top-0 text-black dark:text-white">
-    <div style="z-index: -4; position: fixed;" class="w-screen h-screen" id="bg-div">
+<!--     <div style="z-index: -4; position: fixed;" class="w-screen h-screen" id="bg-div">
         <canvas width="860" height="217" style="width: 100%; height: auto; user-select: none; " id="bg_canvas"></canvas>
-    </div>
+    </div> -->
     <nav
         class="flex items-center justify-between flex-wrap bg-slate-300 dark:bg-slate-800 p-3 bg-opacity-75 dark:bg-opacity-75 shadow-md rounded-md w-full top-0">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -169,7 +169,7 @@
     <div class="p-4">
         <div class="flex flex-row items-center justify-center justify-between w-full" id="images">
         </div>
-        <div class="flex flex-row items-center justify-center w-full bgBtnDiv font-vzir"
+<!--         <div class="flex flex-row items-center justify-center w-full bgBtnDiv font-vzir"
             style="align-items: center; justify-items: center; justify-content: center; display: flex;">
             <button
                 class="bgBtn font-2xl font-semibold rounded-md text-black dark:text-white bg-slate-300 dark:bg-slate-800"
@@ -254,7 +254,7 @@
                 </div>
             </button>
         </div>
-    </div>
+    </div> -->
 
     <footer class="px-6 bottom-0">
         <div class="bg-opacity-75 dark:bg-opacity-75 rounded-t-md bg-slate-300 dark:bg-slate-950 p-4">
@@ -278,7 +278,7 @@
                 document.getElementById("nav-content").classList.toggle("hidden");
             }
         </script>
-        <script type="x-shader/x-fragment">#version 300 es 
+<!--         <script type="x-shader/x-fragment">#version 300 es 
             precision highp float;
             out vec4 O;
             uniform float time;
@@ -312,7 +312,7 @@
                 col+=pattern(uv*s);
                 O=vec4(col,1);
             }</script>
-        <script src="./static/bg.js"></script>
+        <script src="./static/bg.js"></script> -->
     </div>
 </body>
 
