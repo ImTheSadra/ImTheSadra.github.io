@@ -1,319 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sadra Georgi</title>
-    <link rel="stylesheet" href="./static/bgBtn.css">
-    <link rel="stylesheet" href="./static/fonts/fonts.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-        body {
-            background-image: url("/bg.jpg");
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Dark Mode Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vzir: ['"Vazirmatn"', 'IBM Plex Mono', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./static/fonts/fonts.css" />
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/104717267" type="image/png">
+
+    <!-- SEO / Social -->
     <meta name="description"
-        content="Hi there. im sadra. a iranian game developer. i know DirectX OpenGL SDL2 pygame MonoGame and ...">
-    <meta name="keywords" content="python, c#, game programming, python, c++, cpp, c#">
-    <meta property="og:title" content="Its me... Sadra (In the box)">
+        content="Hi there. I'm Sadra, an Iranian game developer experienced in DirectX, OpenGL, SDL2, Pygame, MonoGame and more.">
+    <meta name="keywords" content="python, c#, game programming, c++, cpp, iranian developer">
+    <meta property="og:title" content="It's me... Sadra (In the box)">
     <meta property="og:description"
-        content="Hi there. im sadra. a iranian game developer. i know DirectX OpenGL SDL2 pygame MonoGame and ...\nfor more info you can visit my website">
+        content="Hi there. I'm Sadra, an Iranian game developer. Visit my site to learn more.">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/104717267">
     <meta property="og:url" content="https://imthesadra.github.io">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Its me... Sadra (In the box)">
+    <meta name="twitter:title" content="It's me... Sadra (In the box)">
     <meta name="twitter:description"
-        content="Hi there. im sadra. a iranian game developer. i know DirectX OpenGL SDL2 pygame MonoGame and ...\nfor more info you can visit my website">
+        content="Hi there. I'm Sadra, an Iranian game developer. Visit my site to learn more.">
     <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/104717267">
 </head>
 
-<body class="font-vzir bg-white dark:bg-slate-900 w-full h-screen top-0 text-black dark:text-white">
-<!--     <div style="z-index: -4; position: fixed;" class="w-screen h-screen" id="bg-div">
-        <canvas width="860" height="217" style="width: 100%; height: auto; user-select: none; " id="bg_canvas"></canvas>
-    </div> -->
-    <nav
-        class="flex items-center justify-between flex-wrap bg-slate-300 dark:bg-slate-800 p-3 bg-opacity-75 dark:bg-opacity-75 shadow-md rounded-md w-full top-0">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <a class="text-white no-underline hover:text-white hover:no-underline" href="/">
-                <span class="text-2xl pl-2">Sadra Georgi</span>
-            </a>
-        </div>
+<body
+    class="font-vzir bg-white text-black dark:bg-slate-900 dark:text-white min-h-screen flex items-center justify-center px-4">
+    <main class="max-w-6xl w-full space-y-8 py-10">
+        <!-- Personal Info -->
+        <section class="text-center space-y-4">
+            <img src="https://avatars.githubusercontent.com/u/104717267" alt="Sadra Avatar"
+                class="w-28 h-28 rounded-full mx-auto shadow-lg" />
+            <h1 class="text-3xl font-bold">Hi, I'm Sadra 👋</h1>
+            <p class="text-lg max-w-2xl mx-auto">
+                I'm a passionate Iranian game developer skilled in <strong>DirectX</strong>, <strong>OpenGL</strong>,
+                <strong>SDL</strong>, <strong>Pygame</strong>, <strong>MonoGame</strong>, and more.
+            </p>
+        </section>
 
-        <div class="block lg:hidden">
-            <button id="nav-toggle"
-                class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
-                <span class="material-symbols-outlined">menu</span>
-                <title>Menu</title>
-            </button>
-        </div>
-
-        <div class="bg-opacity-75 dark:bg-opacity-75 w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0"
-            id="nav-content">
-            <ul class="list-reset lg:flex justify-end flex-1 items-center" id="menu_items">
-                <!-- <li class="mr-3">
-                    <a id="index-btn" class="inline-block text-gray-400 no-underline hover:text-gray-200
-                                hover:text-underline py-2 px-4" href="/">Home</a>
-                </li> -->
-                <!-- <li class="mr-3">
-                    <a id="news" class="inline-block text-gray-400 no-underline hover:text-gray-200
-                                        hover:text-underline py-2 px-4" href="/news">News</a>
-                </li>
-                <li class="mr-3">
-                    <a id="profile-btn" class="inline-block text-gray-400 no-underline hover:text-gray-200
-                                        hover:text-underline py-2 px-4" href="/account">Profile</a>
-                </li>
-                <li class="mr-3">
-                    <a id="api-btn" class="inline-block text-gray-400 no-underline hover:text-gray-200
-                                        hover:text-underline py-2 px-4" href="/documention">API Documention</a>
-                </li> -->
-            </ul>
-        </div>
-    </nav>
-
-    <div class=" text-black dark:text-white p-6 flex flex-row justify-center items-center h-9/10">
-        <div
-            class="bg-opacity-75 p-4 rounded-md shadow-md overflow-y dark:bg-slate-950 dark:bg-opacity-75 bg-slate-100 h-full w-full">
-            <p class="text-2xl">Hey There, <span id="hand" style="rotate: 0deg;">👋🏼</span></p>
-            <p>I am a <i>desktop game/app developer</i></p>
-            <div id="grid" class="grid h-full gap-4">
-                <div class="w-full h-full p-2 items-center text-center flex justify-center" id="bash_window">
-                    <canvas id="rainbow_canvas"
-                        class="w-full h-full rounded-md dark:bg-slate-950 dark:bg-opacity-100 bg-slate-300 bg-opacity-100"></canvas>
-                    <div class="text-xl text-black dark:text-white" id="typed-output"
-                        style="z-index: 2; position: absolute; max-width: 50%;"></div>
+        <!-- Skills & Info Windows -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-slate-700 py-4">
+            <!-- Window 1 -->
+            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-slate-900 px-4 py-3 border-b border-slate-700 flex space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div class="w-full h-full p-2">
-                    <p class="text-xl">My Skills</p>
-                    <div class="grid grid-cols-4">
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/55856fb5524fa3c16627af16241febfabe81e16f1600169a891d599757671750/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f632532332d2532333233393132302e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d632d7368617270266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/1bfef5ecde33e0d269c309829ae79939861e08cceda91f473119f596419a113b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f432d3030353939433f7374796c653d666f722d7468652d6261646765266c6f676f3d63266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/87387d674f9ab13f27a5a808fc3489926702a7645f47ea0fa3540c4d02471e83/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f432532422532422d3030353939433f7374796c653d666f722d7468652d6261646765266c6f676f3d63253242253242266c6f676f436f6c6f723d776869746560"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/001d4637c08910acf414f12a1682879a1f99867f6f9a3550f0541e7d03dd34a2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f435353332d3135373242363f7374796c653d666f722d7468652d6261646765266c6f676f3d63737333266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/10c7a8fa2cf317cc7c4af6f13efac086a9f0ea010f0dfc746c94e5cde310b339/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666f722d7468652d6261646765266c6f676f3d68746d6c35266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/9bbd4c2b5f7cda139d91d34caa14392df56353ca55e19b58184610aa8b123854/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176615363726970742d3332333333303f7374796c653d666f722d7468652d6261646765266c6f676f3d6a617661736372697074266c6f676f436f6c6f723d463744463145"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/59f1bf1e0c03f98c620e6456751406b0c8dba1ac0590704d93303b45cfe536ab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5048502d3737374242343f7374796c653d666f722d7468652d6261646765266c6f676f3d706870266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/b61ae322b2b0d53e96018f39fe64adbe074638f521699afc73246ece35aad883/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f70656e474c2d4646464646463f7374796c653d666f722d7468652d6261646765266c6f676f3d6f70656e676c"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/886e1c46655d3fc8e75e54a8429fdb546e8a0ac789e806a7d2f776275ff17bd4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f70352532306a732d4544323235443f7374796c653d666f722d7468652d6261646765266c6f676f3d7035646f746a73266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/f4c52b575a890c7e67c6541271fc5733506088d19c77ffde6bab3e18e7948536/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2e4e45542d3543324439313f7374796c653d666f722d7468652d6261646765266c6f676f3d2e6e6574266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/5c49521f94c7423faeb070475e022721587aff1c097bd05e3756ac33bc612758/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446a616e676f2d3039324532303f7374796c653d666f722d7468652d6261646765266c6f676f3d646a616e676f266c6f676f436f6c6f723d677265656e"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/16f9c749a14960dbe5c84cf8b66cfa3b04d8d39022654239755ae1e5114fd068/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f466c61736b2d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d666c61736b266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/2f6cac47206cf37a9a08befc6a5b890c502278b54b6b05581618ff416ea2f8a8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6f70656e63762d25323377686974652e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6f70656e6376266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/dfba2a5ec89e3df8642ef5cccbf01ea8f597476812f0823be491b11c34e1c990/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e756d70792d3737374242343f7374796c653d666f722d7468652d6261646765266c6f676f3d6e756d7079266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-                        <div class="p-2"><img
-                                src="https://camo.githubusercontent.com/6a5f39a6036a5a41aee23ec5e72ddfd4cc69cf75728b1c73ccc69e55b348c377/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6a736f6e2d3545354335433f7374796c653d666f722d7468652d6261646765266c6f676f3d6a736f6e266c6f676f436f6c6f723d7768697465"
-                                class="rounded-md" alt=""></div>
-
-                    </div>
-                </div>
-                <div class="w-full h-full p-2 grid grid-cols-2">
-                    <div>
-                        <img src="https://avatars.githubusercontent.com/u/104717267" class="rounded-md shadow-md"
-                            alt="">
-                    </div>
-                    <div class="px-2">
-                        <p><span class="text-indigo-600">Name: </span>Sadra Georgi</p>
-                        <p><span class="text-indigo-600">Email: </span>m.sadra.gorji@gmail.com</p>
-                        <p><span class="text-indigo-600">Phone: </span>0910942551</p>
-                        <p><span class="text-indigo-600">Telegram: </span><a
-                                href="https://t.me/imthesadra">@imthesadra</a></p>
-                    </div>
-                </div>
-                <div class="w-full h-full p-2" id="game_window">
-                    <div
-                        class="w-full rounded-t-md text-center bg-slate-300 dark:bg-gray-800 py-2 h-1/10 text-black dark:text-white">
-                        Game</div>
-                    <div style="position: absolute; z-index: 2;">
-                        <input type="range" id="rSize" maxlength="110" minlength="10" step="0.5"
-                            class="text-indigo-600">
-                        <button id="clear" class="text-red-600">
-                            <span class="material-symbols-outlined">delete_forever</span></button>
-                    </div>
+                <div class="p-4 space-y-2">
+                    <h2 class="text-xl font-semibold">Skills</h2>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li>Languages: C#, C++, Python</li>
+                        <li>Game Engines: MonoGame, SDL2, Pygame</li>
+                        <li>Graphics APIs: DirectX, OpenGL</li>
+                        <li>Tools: Git, VS Code, Unity (basic)</li>
+                    </ul>
+                    <a href="./resume.pdf"></a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="p-4">
-        <div class="flex flex-row items-center justify-center justify-between w-full" id="images">
-        </div>
-<!--         <div class="flex flex-row items-center justify-center w-full bgBtnDiv font-vzir"
-            style="align-items: center; justify-items: center; justify-content: center; display: flex;">
-            <button
-                class="bgBtn font-2xl font-semibold rounded-md text-black dark:text-white bg-slate-300 dark:bg-slate-800"
-                id="bgBtn">Background
-                <div class="star-1">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
-                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <defs></defs>
-                        <g id="Layer_x0020_1">
-                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                            <path
-                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                                class="fil0"></path>
-                        </g>
-                    </svg>
+            <!-- Window 2 -->
+            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-slate-900 px-4 py-3 border-b border-slate-700 flex space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div class="star-2">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
-                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <defs></defs>
-                        <g id="Layer_x0020_1">
-                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                            <path
-                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                                class="fil0"></path>
-                        </g>
-                    </svg>
+                <div class="p-4 space-y-2">
+                    <h2 class="text-xl font-semibold">About Me</h2>
+                    <p class="text-sm">
+                        I enjoy graphics programming, optimizing render pipelines, and building game
+                        prototypes. I explore shaders and read about game architecture.
+                    </p>
+                    <p class="text-sm">
+                        I'm always open to collaborations or freelance work. Let's build something cool together!
+                    </p>
                 </div>
-                <div class="star-3">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
-                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <defs></defs>
-                        <g id="Layer_x0020_1">
-                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                            <path
-                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                                class="fil0"></path>
-                        </g>
-                    </svg>
-                </div>
-                <div class="star-4">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
-                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <defs></defs>
-                        <g id="Layer_x0020_1">
-                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                            <path
-                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                                class="fil0"></path>
-                        </g>
-                    </svg>
-                </div>
-                <div class="star-5">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
-                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <defs></defs>
-                        <g id="Layer_x0020_1">
-                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                            <path
-                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                                class="fil0"></path>
-                        </g>
-                    </svg>
-                </div>
-                <div class="star-6">
-                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53"
-                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <defs></defs>
-                        <g id="Layer_x0020_1">
-                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                            <path
-                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
-                                class="fil0"></path>
-                        </g>
-                    </svg>
-                </div>
-            </button>
-        </div>
-    </div> -->
-
-    <footer class="px-6 bottom-0">
-        <div class="bg-opacity-75 dark:bg-opacity-75 rounded-t-md bg-slate-300 dark:bg-slate-950 p-4">
-            <p class="text-2xl text-center">My Projects</p>
-            <div class="grid gap-4" id="projects">
-                
             </div>
-        </div>
-    </footer>
+        </section>
 
+        <section id="idk" class="border-t border-slate-700 py-4">
+            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-lg overflow-hidden text-center ">
+                <div class="bg-slate-900 px-4 py-3 border-b border-slate-700 flex space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="w-full h-full p-2 items-center text-center flex justify-center">
+                    <canvas id="rainbow_canvas" class="w-full h-full"> </canvas>
+                    <div class="text-xl text-black dark:text-white font-semibold" id="typed-output"
+                        style="z-index: 2; position: absolute; max-width: 50%;"
+                        style="z-index: 2; position: absolute; max-width: 50%;">Kernel Creati</div>
+                </div>
+            </div>
+        </section>
 
-    <div>
-        <script src="./static/tailwind.js"></script>
-        <script src="./static/p5.js"></script>
-        <script src="./static/game.js"></script>
-        <script src="./static/typed.js"></script>
-        <script src="./static/main.js"></script>
-        <script src="./static/rainbow.js"></script>
-        <script>
-            document.getElementById('nav-toggle').onclick = function () {
-                document.getElementById("nav-content").classList.toggle("hidden");
-            }
-        </script>
-<!--         <script type="x-shader/x-fragment">#version 300 es 
-            precision highp float;
-            out vec4 O;
-            uniform float time;
-            uniform vec2 resolution;
-            #define FC gl_FragCoord.xy
-            #define R resolution
-            #define T time
-            #define hue(a) (.6+.6*cos(6.3*(a)+vec3(0,83,21)))
-            float rnd(float a) {
-                vec2 p=fract(a*vec2(12.9898,78.233));	p+=dot(p,p*345.);
-                return fract(p.x*p.y);
-            }
-            vec3 pattern(vec2 uv) {
-                vec3 col=vec3(0);
-                for (float i=.0; i++<20.;) {
-                    float a=rnd(i);
-                    vec2 n=vec2(a,fract(a*34.56)), p=sin(n*(T+7.)+T*.5);
-                    float d=dot(uv-p,uv-p);
-                    col+=.00125/d*hue(dot(uv,uv)+i*.125+T);
-                }
-                return col;
-            }
-            void main(void) {
-                vec2 uv=(FC-.5*R)/min(R.x,R.y);
-                vec3 col=vec3(0);
-                float s=2.4,
-                a=atan(uv.x,uv.y),
-                b=length(uv);
-                uv=vec2(a*5./6.28318,.05/tan(b)+T);
-                uv=fract(uv)-.5;
-                col+=pattern(uv*s);
-                O=vec4(col,1);
-            }</script>
-        <script src="./static/bg.js"></script> -->
-    </div>
+        <section id="myprojects" class="py-12 space-y-8 justify-center">
+            <h2 class="text-3xl font-bold text-center">Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center px-4" id="projects">
+                <!-- Project Card -->
+                <!-- <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/600x300?text=Project+Image" alt="Project Name"
+                        class="w-full h-48 object-cover" />
+                    <div class="p-4 space-y-2">
+                        <a href="https://github.com/imthesadra/sample-project" target="_blank"
+                            class="text-xl font-semibold text-blue-400 hover:underline">
+                            Sample Game Project
+                        </a>
+                        <p class="text-sm text-gray-300">
+                            A 2D platformer built using MonoGame. It includes tile-based maps, basic physics, and
+                            animated sprites. Designed for performance and clean architecture.
+                        </p>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+    </main>
+
+    <script src="./static/style.js"></script>
+    <script src="./static/rainbow.js"></script>
+    <script src="./static/p5.js"></script>
+    <script src="./static/typed.js"></script>
+    <script src="./static/main.js"></script>
 </body>
 
 </html>

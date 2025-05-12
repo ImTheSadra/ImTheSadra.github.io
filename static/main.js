@@ -1,6 +1,6 @@
 let xhr = new XMLHttpRequest();
 xhr.open('GET', '/status.txt');
-xhr.onload = ()=>{
+xhr.onload = () => {
     const items = xhr.response.split('\n');
 
     new Typed('#typed-output', {
@@ -18,84 +18,93 @@ xhr.send();
 let grid = document.getElementById("grid");
 let projects = document.getElementById("projects");
 
-if (innerWidth > innerHeight){
-    grid.classList.add("grid-cols-2");
-    projects.classList.add("grid-cols-3");
-} else {
-    grid.classList.add("grid-cols-1");
-    grid.classList.add("grid-cols-1");
-}
+// if (innerWidth > innerHeight){
+//     grid.classList.add("grid-cols-2");
+//     projects.classList.add("grid-cols-3");
+// } else {
+//     grid.classList.add("grid-cols-1");
+//     grid.classList.add("grid-cols-1");
+// }
 
-function addRepo(name, imgURL, desc){
-    let a = document.createElement("a");
-    a.href = "https://github.com/imthesadra/"+name;
-    a.className = "p-4 w-full h-full";
+function addRepo(name, imgURL, desc) {
+    // Card container with fixed max width
+    const card = document.createElement("div");
+    card.className = "w-full max-w-md bg-slate-800 border border-slate-700 rounded-lg shadow-lg overflow-hidden transition hover:scale-[1.02] duration-300";
 
-    let div = document.createElement("div");
-    div.className = "max-w-sm w-full h-full rounded-md overflow-hidden shadow-lg dark:bg-slate-950 bg-slate-100 p-3";
-    
-    let img = document.createElement("img");
+    // Image
+    const img = document.createElement("img");
     img.src = imgURL;
-    img.className = "w-full rounded-md";
-    img.alt = "Project";
+    img.alt = name;
+    img.className = "w-full h-48 object-cover";
+    card.appendChild(img);
 
-    let about = document.createElement("div");
-    about.className = "px-6 py-4";
+    // Content area
+    const content = document.createElement("div");
+    content.className = "p-4 space-y-2";
 
-    let info = document.createElement("div");
-    info.className = "text-gray-700 text-base";
-    info.innerText = desc;
+    // Title with link
+    const title = document.createElement("h3");
+    title.className = "text-xl font-semibold text-blue-400 hover:underline";
 
-    let title = document.createElement("p");
-    title.innerText = name;
-    title.className = "font-bold text-xl mb-2";
-    
-    about.appendChild(title);
-    about.appendChild(info);
+    const link = document.createElement("a");
+    link.href = `https://github.com/imthesadra/${name}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.innerText = name;
 
-    div.appendChild(img);
-    div.appendChild(about);
+    title.appendChild(link);
 
-    a.appendChild(div);
+    // Description
+    const description = document.createElement("p");
+    description.className = "text-sm text-gray-300";
+    description.innerText = desc;
 
-    let projects = document.getElementById("projects");
-    projects.appendChild(a);
+    // Assemble
+    content.appendChild(title);
+    content.appendChild(description);
+    card.appendChild(content);
+
+    // Append to grid container
+    document.getElementById("projects").appendChild(card);
 }
+
+
+
 
 let rxhr = new XMLHttpRequest();
 rxhr.open('GET', '/projects.txt');
-rxhr.onload = ()=>{
+rxhr.onload = () => {
     let repos = rxhr.response.split('\n');
     console.log(repos);
-    for(let i = 0; i < repos.length; i++){
+    for (let i = 0; i < repos.length; i++) {
         let splited = repos[i].split(',');
         let req = new XMLHttpRequest();
-        req.open('GET', 'https://api.github.com/repos/imthesadra/'+splited[0]);
+        req.open('GET', 'https://api.github.com/repos/imthesadra/' + splited[0]);
         let error = false;
-        req.onload = ()=>{
-            if (req.status == 403){error = true;}
+        req.onload = () => {
+            if (req.status == 403) { error = true; }
             let res = JSON.parse(req.response);
             let d = res['description'];
-            if (d == "undefined"){d = "";}
+            if (d == "undefined") { d = ""; }
             addRepo(splited[0], splited[1], d);
             console.log(res);
         }
         req.send();
     }
-    if (error){
+    if (error) {
         alert("you have rate limited in github api so you cant see my projects well");
     }
 }
 rxhr.send()
 
-function showImages(){
+function showImages() {
     let grid = document.getElementById("images");
     let xhr = new XMLHttpRequest();
     xhr.open('GET', '/images.txt');
-    xhr.onload = ()=>{
+    xhr.onload = () => {
         let images = xhr.response.split('\n');
         // grid.classList.add("grid-cols-"+images.length.toString());
-        for(let b64 of images){
+        for (let b64 of images) {
             let img = new Image(100);
             img.src = b64;
             grid.appendChild(img);
@@ -104,6 +113,6 @@ function showImages(){
     xhr.send();
 }
 
-if (document.getElementById("menu_items").children.length == 0){
+if (document.getElementById("menu_items").children.length == 0) {
     document.getElementById("nav-toggle").classList.add("hidden");
 }
