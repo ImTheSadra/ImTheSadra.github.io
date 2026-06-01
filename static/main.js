@@ -1,5 +1,5 @@
 let xhr = new XMLHttpRequest();
-xhr.open('GET', '/status.txt');
+xhr.open('GET', 'https://raw.githubusercontent.com/ImTheSadra/ImTheSadra.github.io/refs/heads/main/status.txt');
 xhr.onload = () => {
     const items = xhr.response.split('\n');
 
@@ -72,7 +72,7 @@ function addRepo(name, imgURL, desc) {
 
 
 let rxhr = new XMLHttpRequest();
-rxhr.open('GET', '/projects.txt');
+rxhr.open('GET', 'https://raw.githubusercontent.com/ImTheSadra/ImTheSadra.github.io/refs/heads/main/projects.txt');
 rxhr.onload = () => {
     let repos = rxhr.response.split('\n');
     console.log(repos);
