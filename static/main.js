@@ -79,6 +79,7 @@ rxhr.onload = () => {
     for (let i = 0; i < repos.length; i++) {
         let splited = repos[i].split(',');
         let req = new XMLHttpRequest();
+        if(splited[0] == "")continue;
         req.open('GET', 'https://api.github.com/repos/imthesadra/' + splited[0]);
         let error = false;
         req.onload = () => {
