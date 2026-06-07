@@ -1,4 +1,4 @@
 C#, C++, Python and lua software developer
 a game developer
 DirectX11 & OpenGL 4
-Git / CMake / Visual Studio
+Git, CMake, Visual Studio
